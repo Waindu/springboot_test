@@ -14,32 +14,32 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController
-@RequestMapping("/api/cuentas")
+@RestController // Registramos controlador Rest en el contenedor de Spring
+@RequestMapping("/api/cuentas") // URI de los metodos de Cuenta
 public class CuentaController {
 
-    @Autowired
+    @Autowired // anotacion de Spring para injectar dependencias, estás deben estar registradas en el contenedor
     private CuentaService cuentaService;
 
-    @GetMapping
-    @ResponseStatus(OK)
+    @GetMapping // verbo http: GET, URI: /api/cuentas
+    @ResponseStatus(OK) 
     public List<Cuenta> listar() {
         return cuentaService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // verbo http: GET, URI: /api/cuentas/{id} con parametro "id" en la ruta
     @ResponseStatus(OK)
     public Cuenta detalle(@PathVariable Long id) {
         return cuentaService.findById(id);
     }
 
-    @PostMapping
+    @PostMapping // verbo http: POST, URI: /api/cuentas con parametro "cuenta" en el body
     @ResponseStatus(CREATED)
     public Cuenta guardar(@RequestBody Cuenta cuenta) {
         return cuentaService.save(cuenta);
     }
 
-    @PostMapping("/transferir")
+    @PostMapping("/transferir") // verbo http: POST, URI: /api/cuentas/transferir con parametro "dto" en el body
     public ResponseEntity<?> transferir(@RequestBody TransaccionDto dto) {
         cuentaService.transferir(dto.getCuentaOrigenId(),
                 dto.getCuentaDestinoId(),

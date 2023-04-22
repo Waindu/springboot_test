@@ -2,16 +2,16 @@ package org.mycompany.springboot.app.models;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="bancos")
+@Entity // indicamos que será una entidad
+@Table(name="bancos") // mapeamos la entidad contra una tabla en BD
 public class Banco {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // PK
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // estrategia de secuencia para generación de ID en BD
     private Long id;
 
     private String nombre;
 
-    @Column(name="total_transferencias")
+    @Column(name="total_transferencias") // mapeamos el atributo con una columna en la BD
     private int totalTransferencias;
 
     public Banco() {

@@ -2,6 +2,7 @@ package org.mycompany.springboot.app.models;
 
 import java.math.BigDecimal;
 
+// Nuestro objecto DTO (data transfer object) que recibimos del frontend para el método transferir
 public class TransaccionDto {
     private Long cuentaOrigenId;
     private Long cuentaDestinoId;

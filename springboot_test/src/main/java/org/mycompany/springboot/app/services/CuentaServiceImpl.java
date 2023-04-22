@@ -10,15 +10,19 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Service
+@Service // Anotación para registrar este servicio dentro del contenedor de Spring
 public class CuentaServiceImpl implements CuentaService{
+    
+    // INICIO - Inyeccion de dependencias
     private CuentaRepository cuentaRepository;
     private BancoRepository bancoRepository;
 
+    // Patrón de DI mediante el constructor
     public CuentaServiceImpl(CuentaRepository cuentaRepository, BancoRepository bancoRepository) {
         this.cuentaRepository = cuentaRepository;
         this.bancoRepository = bancoRepository;
     }
+    // FIN - Inyeccionde de dependencias
 
     @Override
     @Transactional(readOnly = true)

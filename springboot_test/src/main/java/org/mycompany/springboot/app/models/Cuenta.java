@@ -6,12 +6,12 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@Entity
-@Table(name="cuentas")
+@Entity // indicamos que será una entidad
+@Table(name="cuentas") // mapeamos la entidad contra una tabla en BD
 public class Cuenta {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // PK
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // estrategia de secuencia para generación de ID en BD
     private Long id;
 
     private String persona;

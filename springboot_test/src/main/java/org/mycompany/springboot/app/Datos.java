@@ -6,6 +6,7 @@ import org.mycompany.springboot.app.models.Cuenta;
 import java.math.BigDecimal;
 import java.util.Optional;
 
+// DATOS DE PRUEBA
 public class Datos {
 //    public static final Cuenta CUENTA_001 = new Cuenta(1L, "Fede", new BigDecimal("1000"));
 //    public static final Cuenta CUENTA_002 = new Cuenta(2L, "Patri", new BigDecimal("2000"));

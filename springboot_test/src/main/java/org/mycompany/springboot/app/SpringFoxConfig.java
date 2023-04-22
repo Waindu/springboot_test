@@ -7,6 +7,8 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+// Aquí configuramos swagger para documentar nuestra api y disponer de una interfaz en la que podemos realizar pruebas e2e
+
 @Configuration
 public class SpringFoxConfig {
 
